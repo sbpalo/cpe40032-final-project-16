@@ -28,12 +28,12 @@ public class UIButton : MonoBehaviour
 
    public void OnMouseDown()
    {
-       transform.localScale = new Vector3(1.64f, 1.84f, 1.0f);
+       transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
    }
  
    public void OnMouseUp()
    {
-       transform.localScale = new Vector3(1.64f, 1.84f, 1.0f);
+       transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
        if (targetObject != null)
        {
            targetObject.SendMessage(targetMessage);
