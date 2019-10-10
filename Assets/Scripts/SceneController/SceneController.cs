@@ -10,6 +10,11 @@ public class SceneController  : MonoBehaviour
     public const float offsetX = 4f;
     public const float offsetY = 4f;
 
+    private int countTryGuess;
+
+    private int countCorrectGuess;
+    private const int gameGuess = 4;
+
     [SerializeField] private MainCard originalCard;
     [SerializeField] private Sprite[] images;
 
@@ -82,6 +87,8 @@ public class SceneController  : MonoBehaviour
         {
             _secondRevealed = card;
             StartCoroutine(CheckMatch());
+            _score ++;
+            scoreLabel.text = "Score:" + _score;
         }
     }
 
@@ -89,8 +96,13 @@ public class SceneController  : MonoBehaviour
     {
         if (_firstRevealed.id == _secondRevealed.id)
         {
-            _score ++;
+            countCorrectGuess ++;
             scoreLabel.text = "Score:" + _score;
+
+            if (countCorrectGuess == 4)
+            {
+               Debug.Log("FINISHED");
+            }
         }
         else
         {
@@ -106,6 +118,7 @@ public class SceneController  : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene("Scene_001");
+		countCorrectGuess = 0;
     }
 }
 
