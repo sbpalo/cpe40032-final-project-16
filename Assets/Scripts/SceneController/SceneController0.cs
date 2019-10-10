@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; //to restart the scene
 
-public class SceneController  : MonoBehaviour
+public class SceneController0  : MonoBehaviour
 {
-    public const int gridRows = 2;
-    public const int gridCols = 4;
-    public const float offsetX = 4f;
-    public const float offsetY = 4f;
+    public const int gridRows = 4;
+    public const int gridCols = 8;
+    public const float offsetX = 2.2f;
+    public const float offsetY = 2.2f;
 
     [SerializeField] private MainCard originalCard;
     [SerializeField] private Sprite[] images;
@@ -17,7 +17,7 @@ public class SceneController  : MonoBehaviour
     {
         Vector3 startPos = originalCard.transform.position; //The position of the first card. All otehr cards are offset from here.
 
-        int[] numbers = {0, 0, 1, 1, 2, 2, 3, 3};
+        int[] numbers = {0, 0, 1, 1, 2, 2, 3, 3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15};
         numbers = ShuffleArray(numbers); //This is a function we will create in a minute!
 
         for(int i = 0; i < gridCols; i++)
@@ -105,7 +105,7 @@ public class SceneController  : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("Scene_001");
+        SceneManager.LoadScene("Scene_000");
     }
 }
 
