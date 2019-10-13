@@ -14,7 +14,15 @@ public class SceneController0001  : MonoBehaviour
     [SerializeField] private Sprite[] images;
 
     private void Start()
-    {
+    {  
+        //----------------------
+        if (PlayerPrefs.HasKey("Highscore")== true){
+           highscore.text = PlayerPrefs.GetInt("Highscore").ToString();
+       }
+       else{
+           highscore.text = "No highscore yet";
+       }
+       //--------------------
         Vector3 startPos = originalCard.transform.position; //The position of the first card. All otehr cards are offset from here.
 
         int[] numbers = {0, 0, 1, 1, 2, 2, 3, 3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11};
@@ -64,8 +72,15 @@ public class SceneController0001  : MonoBehaviour
     private MainCard _firstRevealed;
     private MainCard _secondRevealed;
 
+    private int countTryGuess;
+
+    private int countCorrectGuess;
+    private const int gameGuess = 4;
+    
+    
     private int _score = 0;
     [SerializeField] private TextMesh scoreLabel;
+    [SerializeField] private TextMesh highscore;
 
     public bool canReveal
     {
@@ -82,6 +97,7 @@ public class SceneController0001  : MonoBehaviour
         {
             _secondRevealed = card;
             StartCoroutine(CheckMatch());
+             _score ++;
         }
     }
 
@@ -89,8 +105,14 @@ public class SceneController0001  : MonoBehaviour
     {
         if (_firstRevealed.id == _secondRevealed.id)
         {
-            _score ++;
+            countCorrectGuess ++;
             scoreLabel.text = "Score:" + _score;
+
+             if (countCorrectGuess == 12)
+            {
+                Finish();
+               Debug.Log("FINISHED");
+            }
         }
         else
         {
@@ -106,6 +128,28 @@ public class SceneController0001  : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene("Scene_0001");
-    }
+         countCorrectGuess = 0;
+    }   
+
+    private void SetHighscore()
+   {
+       PlayerPrefs.SetInt("Highscore", _score);
+       highscore.text=PlayerPrefs.GetInt("Highscore").ToString();
+   }
+
+   private void Finish()
+   {
+       if (PlayerPrefs.GetInt("Highscore") > _score){
+           SetHighscore();
+       }
+   }
+
+    public void ClearHighscores()
+   {
+       _score = 0;
+       Restart();
+       PlayerPrefs.SetInt("Highscore", _score);
+       highscore.text = ("0");
+   }
 }
 
