@@ -81,6 +81,7 @@ public class SceneController0  : MonoBehaviour
     private int _score = 0;
     [SerializeField] private TextMesh scoreLabel;
     [SerializeField] private TextMesh highscore;
+    [SerializeField] public GameObject puzzleFinished;
 
     public bool canReveal
     {
@@ -111,7 +112,8 @@ public class SceneController0  : MonoBehaviour
              if (countCorrectGuess == gameGuess)
             {
                 Finish();
-               Debug.Log("FINISHED");
+                puzzleFinished.SetActive(true);
+                Debug.Log("FINISHED");
             }
         }
         else
@@ -152,7 +154,6 @@ public class SceneController0  : MonoBehaviour
    public void ClearHighscores()
    {
        _score = 0;
-       Restart();
        PlayerPrefs.SetInt("Highscore", _score);
        highscore.text = ("0");
    }
