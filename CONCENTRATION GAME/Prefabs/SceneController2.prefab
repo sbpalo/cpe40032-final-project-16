@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7127846381510064761
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7127846381510064763}
+  - component: {fileID: 7127846381510064762}
+  m_Layer: 0
+  m_Name: SceneController2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7127846381510064763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7127846381510064761}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7127846381510064762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7127846381510064761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d421b566c5338c49bbb3218489b5bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalCard2: {fileID: 0}
+  images2:
+  - {fileID: 21300002, guid: 3254e8992cdf847fa9177deb241d8960, type: 3}
+  - {fileID: 21300004, guid: 3254e8992cdf847fa9177deb241d8960, type: 3}
+  - {fileID: 21300006, guid: 3254e8992cdf847fa9177deb241d8960, type: 3}
+  - {fileID: 21300008, guid: 3254e8992cdf847fa9177deb241d8960, type: 3}
+  - {fileID: 21300010, guid: 3254e8992cdf847fa9177deb241d8960, type: 3}
+  - {fileID: 21300012, guid: 3254e8992cdf847fa9177deb241d8960, type: 3}
+  - {fileID: 21300014, guid: 3254e8992cdf847fa9177deb241d8960, type: 3}
+  - {fileID: 21300016, guid: 3254e8992cdf847fa9177deb241d8960, type: 3}
+  - {fileID: 21300018, guid: 3254e8992cdf847fa9177deb241d8960, type: 3}
+  - {fileID: 21300020, guid: 3254e8992cdf847fa9177deb241d8960, type: 3}
+  - {fileID: 21300022, guid: 3254e8992cdf847fa9177deb241d8960, type: 3}
+  - {fileID: 21300024, guid: 3254e8992cdf847fa9177deb241d8960, type: 3}
+  scoreLabel2: {fileID: 0}
+  highscore2: {fileID: 0}
+  puzzleFinished2: {fileID: 0}
